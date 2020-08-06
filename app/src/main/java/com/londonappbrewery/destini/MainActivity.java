@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
         final TextView storyTextView = findViewById(R.id.storyTextView);
         final Button buttonTop = findViewById(R.id.buttonTop);
         final Button buttonBottom = findViewById(R.id.buttonBottom);
+        final Button reset = findViewById(R.id.resetButton);
 
 
 
@@ -48,12 +49,11 @@ public class MainActivity extends AppCompatActivity {
                     storyTextView.setText(R.string.T6_End);
                     buttonTop.setVisibility(View.GONE);
                     buttonBottom.setVisibility(View.GONE);
+                    reset.setVisibility(View.VISIBLE);
                 }
 
             }
         });
-
-
 
 
         // TODO: Steps 6, 7, & 9 - Set a listener on the bottom button:
@@ -71,14 +71,24 @@ public class MainActivity extends AppCompatActivity {
                     storyTextView.setText(R.string.T4_End);
                     buttonTop.setVisibility(View.GONE);
                     buttonBottom.setVisibility(View.GONE);
+                    reset.setVisibility(View.VISIBLE);
                 }
 
                 else if (storyIndex == 3){
                     storyTextView.setText(R.string.T5_End);
                     buttonTop.setVisibility(View.GONE);
                     buttonBottom.setVisibility(View.GONE);
+                    reset.setVisibility(View.VISIBLE);
                 }
 
+            }
+        });
+
+
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                recreate();
             }
         });
 
